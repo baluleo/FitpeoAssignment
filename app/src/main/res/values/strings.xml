@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Fitpeo Assignment</string>
+    <string name="image_detail">Image Details</string>
+    <string name="no_internet">No Internet Connection</string>
+</resources>
