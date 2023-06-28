@@ -12,8 +12,8 @@
             android:id="@+id/toolbar_main"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/design_default_color_primary"
-            app:layout_constraintBottom_toTopOf="@+id/image_list"
+            android:background="@color/teal_700"
+            app:layout_constraintBottom_toTopOf="@+id/recycler_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -21,7 +21,7 @@
             app:titleTextColor="@color/white" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/image_list"
+            android:id="@+id/recycler_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -29,7 +29,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
-            tools:itemCount="5"
             tools:listitem="@layout/thumbnail_item" />
 
         <androidx.appcompat.widget.AppCompatTextView

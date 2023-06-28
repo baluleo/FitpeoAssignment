@@ -44,18 +44,18 @@ class ImageListAdapter : RecyclerView.Adapter<ImageViewHolder>()  {
     fun setOnClickListener(onClickListener: OnClickListener) {
         this.onClickListener = onClickListener
     }
-
     companion object {
         @JvmStatic
-        @BindingAdapter(value = ["loadImage"], requireAll = false)
-        fun loadImage(image: ImageView, url: String) {
+        @BindingAdapter("imageUrl")
+        fun imageUrl(imageView: ImageView, imageUrl: String?) {
 
-            Picasso.get().load(url)
+            Picasso.get().load(imageUrl)
                 .fit()
                 .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_foreground).into(image)
+                .error(R.drawable.ic_launcher_foreground).into(imageView)
         }
     }
+
 }
 class ImageViewHolder(private val binding: ThumbnailItemBinding) : RecyclerView.ViewHolder(binding.root) {
 

@@ -37,8 +37,8 @@ class ImageDetailActivity : AppCompatActivity() {
     }
     companion object {
         @JvmStatic
-        @BindingAdapter("imageUrl")
-        fun imageUrl(view: ImageView, url: String?) {
+        @BindingAdapter("viewImageUrl")
+        fun viewImageUrl(view: ImageView, url: String?) {
             if (!url.isNullOrEmpty()) {
                 Picasso.get().load(url)
                     .fit()
@@ -47,4 +47,5 @@ class ImageDetailActivity : AppCompatActivity() {
             }
         }
     }
+
 }
