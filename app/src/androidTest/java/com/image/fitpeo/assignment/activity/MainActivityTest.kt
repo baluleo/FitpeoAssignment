@@ -1,9 +1,11 @@
 package com.image.fitpeo.assignment.activity
 
+import com.image.fitpeo.assignment.model.ImagesModel
+
 internal class MainActivityTest {
 
     @org.junit.jupiter.api.Test
-    fun getViewModel() {
+    fun getViewModel(imagesModel: ImagesModel) {
     }
 
     @org.junit.jupiter.api.Test
@@ -17,4 +19,5 @@ internal class MainActivityTest {
     @org.junit.jupiter.api.Test
     fun setAdapter() {
     }
+
 }

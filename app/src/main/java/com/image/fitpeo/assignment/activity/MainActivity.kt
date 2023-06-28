@@ -21,7 +21,6 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-
     private lateinit var binding: ActivityMainBinding
     @Inject  lateinit var viewModel: RecyclerViewModel
     private val retrofitService = ImagesApi.getInstance()
@@ -34,14 +33,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         viewModel = ViewModelProvider(this, ViewModelFactory(ImageRepository(retrofitService),NetworkHelper(this)))[RecyclerViewModel::class.java]
         val gridLayoutManager = GridLayoutManager(applicationContext, 3)
-        gridLayoutManager.orientation = LinearLayoutManager.VERTICAL // set Horizontal Orientation
-        binding.recyclerView.layoutManager = gridLayoutManager // set LayoutManager to RecyclerView
+        gridLayoutManager.orientation = LinearLayoutManager.VERTICAL
+        binding.recyclerView.layoutManager = gridLayoutManager
         binding.recyclerView.adapter = adapter
         viewModel.imageList.observe(this) {
-            binding.listError.visibility = View.INVISIBLE
-            binding.loadingView.visibility = View.INVISIBLE
-            binding.recyclerView.visibility = View.VISIBLE
-            adapter.setImageList(it)
+        binding.listError.visibility = View.INVISIBLE
+        binding.loadingView.visibility = View.INVISIBLE
+        binding.recyclerView.visibility = View.VISIBLE
+        adapter.setImageList(it)
         }
         viewModel.errorMessage.observe(this) {
             binding.loadingView.visibility = View.INVISIBLE
@@ -58,7 +57,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(TITLE, model.title)
             startActivity(intent)
         }
-
     }
     companion object{
         const val IMAGE_URL="ImageURL"
